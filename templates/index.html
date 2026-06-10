@@ -11,5 +11,13 @@
     <a href="{% url 'contato' %}"> Página contato</a>   
     <br>
     <a href="{% url 'sobre' %}"> Página sobre</a>
+    <br>
+    <a href="{% url 'aluno' 1 %}">Ir para aluna Laíze</a>
+
+    {% if nome %}
+        <p>Olá, {{nome}}</p>
+    {% else %}
+        <p>Olá, visitante</p>
+    {% endif %}
 </body>
 </html>
