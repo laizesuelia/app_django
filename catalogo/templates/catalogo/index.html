@@ -6,13 +6,17 @@
     <title>Catálogo</title>
 </head>
 <body>
-    <h1>Meu catalogo de filme</h1>
-        {% for obra in obra %}
-            <h2>{{obra.titulo}}</h2>
-            <p>{{obra.tipo}}</p>
-            <hr>
-        {% endfor %}
-    {% else %}
-        <p> Erro </p>
+    <h1>Meu catálogo de filmes</h1>
+
+    {% for obra in obras %}
+        <h2>{{ obra.titulo }}</h2>
+        <p>{{ obra.tipo }}</p>
+        <a href="{% url 'catalogo:detalhes' obra.id %}">
+            Ver detalhes
+        </a>
+        <hr>
+    {% empty %}
+        <p>Erro</p>
+    {% endfor %}
 </body>
 </html>

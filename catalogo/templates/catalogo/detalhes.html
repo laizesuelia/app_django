@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes</title>
+</head>
+<body>
+    {% if obra %}
+        <h1>{{obra.titulo}}</h1>
+        <p>Tipo: {{ obra.tipo }}</p>
+        <p>Ano: {{obra.ano}}</p>
+        <p>Descrição: {{obra.descricao}}</p>
+    {% else %}
+        <p> Obra não encontrada</p>
+    {% endif %}
+        <a href = "{% url 'catalogo:index' %}">Voltar para catálogo</a>
+</body>
+</html>
